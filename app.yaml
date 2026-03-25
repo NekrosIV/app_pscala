@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: app1-container
-          image: pscala/app1:v1
+          image: pscala/app1:v2
           ports:
             - containerPort: 80
 ---
@@ -27,7 +27,7 @@ metadata:
   name: app1-service
   namespace: dev
 spec:
-  type: LoadBalancers
+  type: LoadBalancer
   selector:
     app: app1
   ports:
