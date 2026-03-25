@@ -30,5 +30,5 @@ spec:
     app: app1
   ports:
     - protocol: TCP
-      port: 6666
-      targetPort: 6666
+      port: 8888
+      targetPort: 8888
