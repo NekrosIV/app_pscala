@@ -27,7 +27,7 @@ metadata:
   name: app1-service
   namespace: dev
 spec:
-  type: LoadBalancer
+  type: LoadBalancers
   selector:
     app: app1
   ports:
