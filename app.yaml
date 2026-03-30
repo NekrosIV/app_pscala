@@ -27,12 +27,14 @@ metadata:
   name: app1-service
   namespace: dev
 spec:
-  type: ClusterIp
+  type: ClusterIP
   selector:
     app: app1
   ports:
-      port: 6767
+    - name: http
+      port: 80
       targetPort: 80
+      protocol: TCP
 ---
 apiVersion: networking.k8s.io/v1
 kind: Ingress
