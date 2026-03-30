@@ -27,28 +27,27 @@ metadata:
   name: app1-service
   namespace: dev
 spec:
-  type: LoadBalancer
+  type: ClusterIp
   selector:
     app: app1
   ports:
-    - protocol: TCP
-      port: 80
+      port: 6767
       targetPort: 80
----
-apiVersion: networking.k8s.io/v1
-kind: Ingress
-metadata:
-  name: apps-ingress
-  namespace: dev
-spec:
-  rules:
-    - host: app1.com
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: app1-service
-                port:
-                  number: 80
+# ---
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: apps-ingress
+#   namespace: dev
+# spec:
+#   rules:
+#     - host: app1.com
+#       http:
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: app1-service
+#                 port:
+#                   number: 80
